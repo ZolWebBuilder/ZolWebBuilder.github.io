@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terms of Service & Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #121212, #1e1e1e);
+      color: #e0e0e0;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: linear-gradient(to right, #1a1a1a, #2a2a2a);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #00ff55;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      background: linear-gradient(to top, #0f0f0f, #1a1a1a);
+      transition: background 0.3s ease, color 0.3s ease;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .tab:hover {
+      background: #00ff55;
+      color: #111;
+    }
+
+    .tab.active {
+      background: #00ff55;
+      color: #111;
+    }
+
+    .content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #00ff55;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #00ff88;
+    }
+
+    p, li {
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #00ff99;
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('tos')">Terms of Service</div>
+      <div class="tab" onclick="showTab('privacy')">Privacy Policy</div>
+    </div>
+
+    <div id="tos" class="content active">
+      <h1>Terms of Service</h1>
+      <p><em>Last updated: August 7, 2025</em></p>
+      <p>By accessing or using this bot (the "Service"), you agree to be bound by these Terms of Service. The Service is operated by independent maintainers and is not affiliated with Site-Virtus or any other organization.</p>
+
+      <h2>Use of the Service</h2>
+      <p>You may use the Service only in compliance with applicable laws and these terms. You are responsible for any content or data you submit.</p>
+
+      <h2>Privacy</h2>
+      <p>Our <a href="#privacy" onclick="showTab('privacy')">Privacy Policy</a> describes how we collect, use, and safeguard information. By using the Service, you consent to the practices described in the Privacy Policy.</p>
+
+      <h2>No Warranty</h2>
+      <p>The Service is provided on an "as is" and "as available" basis, without warranties of any kind. We do not guarantee the availability, security, or reliability of the Service.</p>
+
+      <h2>Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, we shall not be liable for any direct, indirect, incidental, or consequential damages. These limitations apply to any claims arising from or related to your use of the Service.</p>
+
+      <h2>Changes to These Terms</h2>
+      <p>We may modify these Terms of Service at any time. Changes become effective upon posting. Your continued use of the Service after the posting of changes constitutes acceptance of the updated terms.</p>
+    </div>
+
+    <div id="privacy" class="content">
+      <h1>Privacy Policy</h1>
+      <p><em>Last updated: August 7, 2025</em></p>
+      <p>This document describes how the independently managed bot ("the Service") collects, uses, and safeguards information. The Service is operated by individual maintainers and is not run, endorsed, or otherwise controlled by Site-Virtus or any other organization.</p>
+
+      <h2>Information We Collect</h2>
+      <p>We collect only the minimum information necessary to verify user identity and to provide the Service. This may include a user identifier or basic contact information.</p>
+
+      <h2>Use of Information</h2>
+      <p>The information collected is used exclusively to operate and maintain the Service and to ensure that each user can be uniquely identified. The information is not used for any other purpose.</p>
+
+      <h2>Data Sharing</h2>
+      <p>We do not sell, trade, or otherwise disclose user information to third parties. Reasonable safeguards are employed to prevent unauthorized access, disclosure, alteration, or destruction of the information we hold.</p>
+
+      <h2>Data Retention</h2>
+      <p>Information is retained only for as long as required to provide the Service and to verify user identity.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Continued use of the Service after changes are posted constitutes acceptance of the revised policy.</p>
+
+      <h2>Contact</h2>
+      <p>Questions regarding this policy may be directed by opening an issue in this repository or contacting the maintainers.</p>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.content');
+      
+      tabs.forEach(tab => tab.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      document.querySelector('.tab[onclick*="' + tabId + '"]').classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
