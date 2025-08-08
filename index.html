@@ -11,9 +11,16 @@
       padding: 0;
       box-sizing: border-box;
     }
+
+    html, body {
+      height: 100%;
+      min-height: 100%;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #121212, #1e1e1e);
+      background-attachment: fixed;
       color: #e0e0e0;
       padding: 40px 20px;
     }
@@ -42,6 +49,9 @@
       background: linear-gradient(to top, #0f0f0f, #1a1a1a);
       transition: background 0.3s ease, color 0.3s ease;
       border-radius: 10px 10px 0 0;
+      -webkit-tap-highlight-color: transparent; /* removes blue flash on mobile */
+      outline: none; /* removes focus outline */
+      user-select: none; /* prevent accidental text selection */
     }
 
     .tab:hover {
